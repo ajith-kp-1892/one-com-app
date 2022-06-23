@@ -1,0 +1,27 @@
+<div class="auth-wrapper">
+  <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+    <h3 class="h3 mb-3 font-weight-normal text-center">Log in</h3>
+    <div class="form-group">
+      <label>User Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="userName"
+        placeholder="Enter User name"
+        required
+      />
+    </div>
+    <div class="form-group mt-2">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="Password"
+      />
+    </div>
+    <button type="submit" class="mb-3 btn btn-block btn-info mt-2">Log in</button>
+
+    <div class="text-danger mt-1">{{errorMessage}}</div>
+  </form>
+</div>

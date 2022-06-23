@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="inner-main">
+      <h2 class="mb-4">Dashboard</h2>
+
+      <button (click)="getProducts()"  type="button" class="btn btn-info">
+        View products
+      </button>
+      <button (click)="createProduct()"  type="button" class="btn btn-info">
+        Add Products
+      </button>
+      <button (click)="deleteProduct()"  type="button" class="btn btn-info">
+        Delete Product
+      </button>
+      <button (click)="updateProduct()"  type="button" class="btn btn-info">
+        Edit Product
+      </button>
+
+      <div class="response">{{ response }}</div>
+    </div>
+  </div>
+</div>

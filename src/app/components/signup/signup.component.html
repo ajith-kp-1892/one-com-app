@@ -1,0 +1,23 @@
+<div class="auth-wrapper">
+  <form class="form-signin" [formGroup]="signupForm" (ngSubmit)="registerUser()">
+    <h3 class="h3 mb-3 font-weight-normal text-center">Sign up</h3>
+    <div class="form-group mt-2">
+      <label>User Name</label>
+      <input type="text" class="form-control" formControlName="userName" placeholder="Enter User name" required />
+    </div>
+    <div class="form-group mt-2">
+      <label>Role</label>
+      <select class="form-control" id="role" formControlName="role">
+        <option value="default">--Select a Role--</option>
+        <option *ngFor="let c of roles" [value]="c">{{c}} </option>
+      </select>
+    </div>
+    <div class="form-group mt-2">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Password" required />
+    </div>
+    <button type="submit" class="btn btn-info btn-primary mt-2">Sign up</button>
+
+    <div class="mt-1 text-danger">{{errorMessage}}</div>
+  </form>
+</div>
