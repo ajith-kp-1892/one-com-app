@@ -12,8 +12,7 @@ export class DashboardComponent implements OnInit {
 
   response : string = ''
 
-  constructor(public authService: AuthService,
-              private actRoute: ActivatedRoute) {
+  constructor(public authService: AuthService) {
     
   }
 

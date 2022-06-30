@@ -40,9 +40,12 @@ export class SignupComponent implements OnInit {
       if(res.error) {
         this.errorMessage = res.error
       }
-      if (res.message) {
-        this.signupForm.reset();
-        this.router.navigate(['log-in']);
+      if (res) {
+        this.errorMessage = res
+        setTimeout(()=> {
+          this.signupForm.reset();
+          this.router.navigate(['log-in']);
+        }, 3000)
       }
     })
   }

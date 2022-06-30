@@ -30,13 +30,14 @@ export class SigninComponent implements OnInit {
     this.errorMessage = ''
     this.authService.signIn(this.signinForm.value)
     .subscribe((res: any) => {
-      if(res.error) {
-        this.errorMessage= res.error
-      } else {
+
+      if( res.accessToken) {
         localStorage.setItem('access_token', res.accessToken);
         this.router.navigate(['dashboard']);
+        return
       }
       
+      this.errorMessage= res
     })
   }
 }
